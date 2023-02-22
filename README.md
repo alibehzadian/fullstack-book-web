@@ -1,10 +1,10 @@
 ---
 layout: home
-title: Fullstack Book
+title: Fullstack Developers Guide
 permalink: /
 ---
 
-Make Jelly site have a GitBook look!
+How to build a software from the ground up!
 
 ## Demo
 
