@@ -2,7 +2,7 @@
 title: Contact
 author: Ali Behzadian Nejad
 date: 2022-02-05
-category: Jekyll
+category: page
 layout: post
 ---
 
