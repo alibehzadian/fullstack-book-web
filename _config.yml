@@ -47,10 +47,10 @@ exclude:
   - _drafts
 
 collections:
-  pages:
+  prerequisites: 
     output: true
     permalink: /:collection/:path/
-  prerequisites: 
+  pages:
     output: true
     permalink: /:collection/:path/
 
