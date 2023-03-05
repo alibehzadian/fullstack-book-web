@@ -1,7 +1,7 @@
 ---
 layout: default
-title: "Day 0: Configure Development Environment and Start Development"
-nav_order: 4
+title: "Day 0: Configure"
+nav_order: 5
 ---
 
 # install Java
