@@ -5,5 +5,5 @@ nav_order: 2
 parent: Prerequisites
 ---
 
-# Prerequisites - Javascript
+# Javascript Language
 
