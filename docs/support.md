@@ -6,7 +6,7 @@ nav_order: 2
 
 # Support project
 
-# Contribute to improve Text and Code
+# Contribute to the Text and Code
 
 # Financial Support
 
