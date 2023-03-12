@@ -36,13 +36,13 @@ It seems that it is not easy to be a fullstack developer! But there are lots of 
 
 I have an idea! I think that it has a very good market and I want to start building it. The idea is about building a software to help companies and their emplyees manage hybrid working. After COVID-19 pandemic, many companies around the world were forced to try a new way of working remotely. There were many problems for the companies that they did not have a solution for. Nearly three years into the pandemic, it seems many companies and workforces are choosing to use the lessons learned during that time and implement smart hybrid working practices. Naturally, startups were created to respond to these needs, and a complete and definitive solution has not yet been created for it. I also want to create a system for managing mixed work based on my experiences, and of course I will share the work steps with you in detail.
 
-I will assume that you know programming languages I use during this project. But, don't worry if you don't them. I will write a crash course for each of them in the "prerequisite" section of this website. 
+I assume that you know programming languages I will use during this project. But, don't worry if you don't know them. I will write a crash course for each of them in the "prerequisite" section of this website. 
 
 We start by preparing our environment. Then create a backend application using "Spring Boot" framework. A dahboard for users using "React" and "iOS" and "Android" mobile applications using "Flutter" framework. 
 
-We deploy the whole application on "Amazon web Services" or "AWS". 
+We deploy the whole application on "Amazon web Services" or "AWS". We will also try to cover deployment on "Microsoft Azure" and "Google Cloud" too.
 
 # Support
 
-You can help me during this project by fixing my typos and error codes, improving code quality, or maybe help me to write some sections of the book. At the end, if you like this project and want to buy me a coffee, I will open a way for financial support.
+You can help me during this project by fixing my typos and error codes, improving code quality, or maybe help me to write some sections of the book. At the end, if you like this project and want to buy me a coffee, see details in [Support]({% post_url ../donate.md %}) page.
 
