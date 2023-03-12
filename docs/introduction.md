@@ -44,5 +44,5 @@ We deploy the whole application on "Amazon web Services" or "AWS". We will also 
 
 # Support
 
-You can help me during this project by fixing my typos and error codes, improving code quality, or maybe help me to write some sections of the book. At the end, if you like this project and want to buy me a coffee, see details in [Support]({% post_url ../donate.md %}) page.
+You can help me during this project by fixing my typos and error codes, improving code quality, or maybe help me to write some sections of the book. At the end, if you like this project and want to buy me a coffee, see details in [Support]({% link docs/support.md %}) page.
 
