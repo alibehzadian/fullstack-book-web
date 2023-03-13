@@ -283,6 +283,20 @@ String name = "Some text";
 
 ## Java String handling
 
+### String Length
+
+### Concatenating Strings
+
+### Format Strings
+
+### Substrings
+
+### Compare Strings
+
+## Java StringBuilder
+
+
+
 ## Text Blocks
 
 From Java 15, we have text blocks in Java! You can define a text block by wrapping your text inside `"""` (three double qoutes) as below:
@@ -310,9 +324,173 @@ final double PI = 3.14;
 
 ## Java Arrays
 
+Suppose you want to take the grades of students in a class and calculate their average. The number of students in the class is 25. Are you defining 25 float variables? What would you do if there were 50 students in the class? What would you do for 200 people? 
+
+As you might guess, the solution is not to use too many variables. If we could store a large number of variables of the same type with the same name and access them using an index, the problem would be solved. 
+
+For example, we used to say that the list of students' grades includes 25 float variables, and then we said that the first student's grade is 15 and the second student's grade is 16, and so on. 
+
+Such a data type is called an array. Array is a set of variables called element and all of them are of the same type. 
+
+An array is identified by several things: its name, the number of variables it holds, called the length of the array, and the type of variables the array holds. 
+
+Therefore, to define an array that stores students' grades, we act as follows:
+
+```java
+float[25] grades;
+```
+Pay attention to the parts of the above definition: 
+`float` Specifies the array type. It actually says that the above array holds float elements. 
+
+`[25]` declares that the length of the array is 25. [] represents the array and the integer inside it specifies the length of the array. 
+
+`grades` is the name of the array. 
+
+Now, if we want to value the elements of this array, we act as follows:
+
+```java
+grades[0] = 12.3f;
+grades[1] = 15.5f;
+// ...
+grades[24] = 16f;
+```
+In Java, array index starts from 0. So in an array with 25 elements, the first item's index in 0 and latest item's index is 24.
+
 ## Naming rules for Variables
 
+Naming variables in Java has limitations. Variables start with letters (a-z and A-Z) and an underscore (`_`) and can be followed by any number of letters or numbers.
+
+Some examples of incorrect names for variables in Java:
+
+```java
+int 1i; // Wrong name
+String #name = "My Name"; // Wrong name
+```
+However, there are rules for naming variables in the Java language that are not mandatory, but most Java programmers have accepted them, and of course it is recommended as a correct coding pattern in Java. Some of these rules are:
+
+Variable names start with a lowercase letter. If the variable name is more than one word, the words are concatenated and the first letter of the second and subsequent words are capitalized. This naming method is known as Camel case. Some examples of good and bad names:
+
+
+```java
+int number;          // Good name!
+int second_number;   // Bad name!
+int secondNumber;    // Good name!
+String Name;         // Bad name!
+String name;         // Good name!
+float _average;      // Bad name!
+```
+
+Constant variables (final) are usually written in capital letters and if the number of words is more than one word, they are separated by a underscore (-):
+
+```java
+double PI = 3.14;
+String URL = "https://behzadian.info";
+String DB_URL = "jdbc:mysql://127.0.0.1:3306/testDB";
+```
+
 ## Variables Scopes
+
+Variables are valid only in the same scope in which they are defined. For example, if we define a variable inside a method, we don't have access to it in other methods and we can't see its value or change it. See the example:
+
+```java
+public class VariableScopeTest {
+ 
+    public void firstMethod() {
+        int myNumber = 5;
+    }       
+ 
+    public void someMethod () {
+        myNumber = 10; //?
+    }
+}
+```
+In this example, a variable named `myNumber` is defined and initialized in the `firstMethod` method. Although both `firstMethod` and `someMethod` belong to the same class, in `someMethod` we have no access to `myNumber` variable. If you try to compile the above class, the compiler will give you an error:
+
+```
+can not find symbol
+symbol  : variable: myNumber
+location: class VariableScopeTest
+                myNumber = 10; // ?
+                ^
+1 error
+```
+
+The reason is quite clear: a variable defined in a method belongs to that method and does not exist outside of it. Therefore, we do not have access to it in other methods.
+
+The variables' scope in Java language is divided as follows:
+
+**Class scope**: Class properties are variables that are accessible throughout a class. For example, if a variable is in the scope of a class, all the methods of that class have access to it, and any of the methods that change that variable will change its value in other methods as well.
+
+**Method scope**: These are variables that are defined in a method. These variables can only be accessed in the method in which they are defined.
+
+**Block scope**: Sometimes we define variables inside iteration loops or some other conditional structures inside a method. These variables are not accessible outside that block. See the example:
+
+
+```java
+public class VariableScopeTest {
+ 
+    public void someMethod () {
+        for( int i = 0 ; i < 10 ; i++ ) {
+            // Do something
+        }       
+ 
+        // Now what is i's value?
+        System.out.println( "i = " + i );
+    }
+}
+```
+
+In the example above, the variable `i` is defined in the for loop. When we try to print the value of `i` to the output, we get an error:
+
+```
+can not find symbol
+symbol  : variable: i
+location: class VariableScopeTest
+                System.out.println( "i = " + i );
+                                             ^
+1 error
+
+```
+The reason is that the scope of the variable `i` is only the for loop, and there is no variable `i` outside of it.
+
+An important issue that needs to be explained in the field of variables is the issue of names of variables. Is it possible to have two variables with the same name? it depends! 
+
+This is possible if the variables of the same name are in different scopes. For example, if a class has an attribute named someInt and one of the methods of that class has a variable with the same name, there is no error. 
+
+The only important thing is that the variables of the same name are valid in the same scope in which they are defined. See the example:
+
+
+```java
+public class VariableScopeTest {
+ 
+    int someInt;
+ 
+    public void someMethod () {
+        int someInt;
+        someInt = 5; // ?
+    }
+}
+```
+In the above example, a variable named `someInt` is defined in the `VariableScopeTest` class and is among the properties of that class. A variable called `someInt` is also defined in the `someMethod` method. 
+
+Now, what happens if we assign the value `5` to the `someInt` variable in the `someMethode` method? Does the variable defined in the function change or the property of that class? 
+
+To answer this question, it should be noted that priority is given to the domain in which the variable is defined. So if we assign the value `5` to someInt, the variable defined in the method will change, not the class property of the same name. 
+
+Now, what should we do if we want to change the class property called `someInt` in the `someMethod` method? For this, it is enough to use `this` keyword. See the example:
+
+```java
+public class VariableScopeTest {
+ 
+    int someInt;
+ 
+    public void someMethod () {
+        int someInt;
+        someInt = 5; // Method variable
+        this.someInt = 7; // class variable
+    }
+}
+```
 
 # Java Operators
 
