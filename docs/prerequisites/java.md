@@ -6,6 +6,28 @@ parent: Prerequisites
 ---
 
 # Introduction to Java Programming language
+In 1991, a project called "Green" was started in Sun Microsystems. The goal of this project was to create a programming language that can run on all hardware. This goal was a very big goal. This project was called "Java" at the end of the work. When Java was being developed, C and C++ dominated other programming languages. However, their major weaknesses plague many programmers. For example, if you wanted to write a program in C language and run it on computers made by different companies, you would have to compile its source code in each of the machines and run the executable code in the desired machine. So far, the problem was not very difficult, but the point was that you had to change the source code every time to compile the program. In addition, you had to always maintain several different versions of the source code, which greatly increased the cost of software production.
+
+In 1995, the first version of Java language was introduced to the world along with a shocking technology called Applet. The new language claimed to work on all existing operating systems. You don't need to create and maintain different source codes for your application. The motto of the new language was "Write Once, Run Anywhere". A new language had come to shape the future of the web. The new language gave everyone hope. It did not have the major drawbacks of previous languages such as C and C++, and therefore it was welcomed by programmers all over the world.
+
+This language followed its natural course and changes were made according to the opinions of the programmers. However, Java strongly believed in adhering to its motto and was able to defend its claim with authority. In 1999, Sun divided the Java language into three main branches:
+
+* Java 2 Standard Version or J2SE: This branch contains all the standard features of the Java language.
+* Java 2 Enterprise Edition or J2EE: This branch is for server-side programming.
+* Java 2 micro version or J2ME: This branch is for programming consumer electronic devices such as mobile phones.
+
+The natural growth of Java continued and every now and then new versions and modifications of Java were introduced to the programming community. 
+
+In 2005 Sun decided to change its naming convention. The name of the Java language along with its version number would be something like j2sdk_1.4.06. After this year and due to the many changes made in the Java language, this language chose the name Java 5.
+
+The three main branches of the Java language were also renamed while maintaining the previous goals and features. The new names for each are as follows: Java SE or Java Standard Edition, Java EE or Java Enterprise Edition and Java ME or Java Micro Edition.
+
+TODO: Java Open Source
+
+TODO: Oracle Acquisition of Sun Microsystems
+In 2009 Oracle acquired Sun Microsystems ...
+
+Since that year Oracle has presented a new version of Java language every year. Currently, the latest long term supported (LTS) version of Java is Java 17. 
 
 # Java, JDK and JRE
 
