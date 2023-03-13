@@ -42,12 +42,19 @@ Since that year Oracle has presented a new version of Java language every year. 
 ## About Java Versions
 
 # First Java Application
-It is time for a cup of "Java"! We already have installed Java. We don't want to use any IDE for our first Java program! So, Open your preferred text editor (For example Notepad in windows) and write this code (please, do not copy for this time!):  
+It is time for a cup of "Java"! We already have installed Java. We don't want to use any IDE for our first Java program! So, Open your preferred text editor (For example Notepad in windows) and write this code (please, do not copy for this time!):
+
+```
+public class FisrtCupApp {
+    public static void main(String[] args) {
+        System.out.println("My first cup of Java!");
+    }
+}
+```
 
 Save the file with `FisrtCupApp.java`. 
 
-{: .warning }
-The file name must be as the same as clss name. It is case-sensitive and, for example `FisrtCupApp.java` is different with `FisrtcupApp.java` and the second one won't compile.
+Warning: The file name must be as the same as clss name. It is case-sensitive and, for example `FisrtCupApp.java` is different with `FisrtcupApp.java` and the second one won't compile.
 
 # Java Class Structure
 
