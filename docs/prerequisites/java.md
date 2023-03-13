@@ -821,19 +821,221 @@ As you remember from your math lessons, some operators have a higher priority th
 | `&=`  <br/>`|=`  <br/>`<<=` <br/>`>>=`  <br/>`>>>=`                  | Bitwise Assignments  |
 
 
-
-
 # Java Control Structures
 
+Computer programs written in any programming language—including Java—consist of three main components that control program execution:
+* Sequence
+* Selection
+* Repetition
+
+Sequence: Sequence means executing the program commands consecutively. See the example:
+
+```java
+int a = 10;
+int b = 10;
+int c = a + b;
+System.out.println( "a + b = " + c );
+int d = a * b;
+System.out.println( "a * b = " + d );
+```
+
+You may ask if there is another way? Many old programming languages have commands to break this law. Commands like `jump` or `goto`. In Java we have two commands that are against this rule, but are very limited and under control: `continue` and `break`. You will see them very soon.
+
+Selection: 
 ## Selection in Java
 
-## If Statement
+Sometimes we want to choose the program execution path from several different paths. For example, we want to reward the student if his score was higher than 18, warn him/her if it was between 60 and 70, and fine him if it was between 50 and 60. As you can see, the "activity" related to each of the above choices is different from the other. Pay attention to the following algorithm:
 
-## If-Else Statement
+```
+If the student's score is greater than 70:  
+    Reward the student  
+If the student's score is between 60 and 70:  
+    Warn the student  
+If the student's score is between 50 and 60:  
+    Fine the student
+Otherwise
+    Reject Student
+```
 
-## Switch Statement
+Java uses several different methods for the selection structure, which we will see in next sections:
+
+* The if structure
+* if-else structure
+* Switch structure
+
+
+### If Statement
+
+There are times when we want to execute a statement if a condition is `true`, and if the condition is `false`, continue the program regardless of the statement. 
+
+For example, if the student's score was more than 50, we want to write "passed" in his report:
+
+```
+If the student's score is more than 50
+    Write "Passed"
+```
+In the above algorithm, if the condition is `true`, i.e. the student's score is more than 50, the internal statement will be executed and then the next statement after `if` statement will be executed, but if the condition is `false`, statement inside `if` will not be executed and The program just skip it.
+
+For single selection in Java, we use the `if` statement:
+
+```java
+if(condition)
+    statement;
+```
+
+In the above syntax, `condition` is any logical expression whose return value is `true` or `false`. `statement` can also be any Java statement. If the number of internal statements of the if command is more than one statement, we use the following form for the if command:
+
+```java
+if(condition) {
+    statement1;
+    statement2;
+    statement3;
+}
+```
+As we said, the `condition` can be any logical expression with a return value of `true` or `false`. Therefore, logical statements can be combined in the if statement:
+
+```java
+if(condition1 && (condition2 || condition3)) {
+    statement;
+}
+```
+
+Examples of the if statement:
+
+```java
+int a = 5;
+int b = 7;
+int c = a + b;
+if( c > 10 ) {
+    System.out.println( "a + b is greater than 10!" );
+}
+```
+In the above `if` statement, the condition is whether the sum of `a + b` is greater than 10 or not, and since the above sum is greater than 10, the condition is true and the internal if statement is executed and the statement "a + b is greater than 10!” It is printed in the output.
+
+
+```java
+int a = 5;
+int b = 7;
+if( ( a * b ) > 40 ) {
+    System.out.println( "are you sure that (a * b) is greater than 40?" );
+}
+```
+
+In the `if` statement above, the condition checks whether the product of a and b is greater than 40 or not, and since the value of this product is less than 40, the condition is `false` and the internal statement will not be executed.
+
+### If-Else Statement
+
+In the `if` statement, if the condition is true, the internal statements are executed, and otherwise, the program skips over these statements and executes the statements after if. 
+
+There are times when we want to execute a special statement if the condition of the `if` statement is false. For example, see this algorithm:
+
+```
+If the student's score was more than 50
+    write "passed"
+otherwise
+    write "failed"
+```
+
+In Java, we use the if-else command in such cases:
+
+```java
+if(condition)
+    statement1;
+else
+    statement2;
+```
+
+In the above example, if the condition is `true`, the `statement1` will be executed. But if the condition is `false`, `statement2` will be executed.
+
+As we said before, if the number of internal statements of the `if` or `else` is more than one, we use the following form:
+
+```java
+if(condition) {
+    statement1;
+    statement2;
+    statement3;
+    ...
+} else {
+    statement4;
+    statement5;
+    statement6;
+    ...
+}
+```
+
+The `if` and `else` internal statements can be any allowed Java statement, so you can use nested `if` and `else` as below:
+
+```java
+int a = 5;
+int b = 7;
+if(a != 5) {
+    System.out.println("a != 5");
+} else {
+    if( b == 7 ) {
+        System.out.println("a = 5 and b = 7");
+    }
+}
+```
+
+Look carefully at the code snippet above. As you can see, an `if` statement is placed inside an `else` statement. For more simplicity, they can be combined and written as follows:
+
+```java
+int a = 5;
+int b = 7;
+if( a != 5 ) {
+    System.out.println("a != 5");
+} else if( b == 7 ) {
+    System.out.println("a = 5 and b = 7");
+}
+```
+
+In the example above, the condition of the `if` statement is checked first. If the `if` condition is `false`, then the `else if` condition is checked, if the `else if` condition is `true`, the internal `else-if` statements are executed, otherwise the execution of the program continues from the first statement after the `else-if`.
+
+It is possible to nest `else-if` more. Consider the following example:
+
+```java
+if(condition1) {
+    statement1;
+} else if(condition2) {
+    statement2;
+} else if(condition3) {
+    statement3;
+} else {
+    statement4;
+}
+```
+
+In the above example, if `condition1` is `true`, `statement1` will be executed. If `condition2` is true, `statement2` will be executed and ... and if none of the above conditions are true, `statement4` will be executed. Of course, the last `else` is optional and we only add it if we want to execute certain commands if all the conditions are `false`.
+
+### Switch Statement
 
 ## Iteration in Java
+
+The sequence and selection are sufficient to implement many algorithms, however there are many cases where we want to repeat an activity a large number of times. 
+
+Suppose we want to answer received mails. The algorithm is as follows:
+
+```
+As long as there is a letter:
+    Reply the letter
+```
+
+In the above algorithm, replying email is repeated until there is a letter. This structure is called repetition.
+
+Java uses several different methods for the repetition structure, which we will introduce in this section:
+
+* while loop
+* Do/while loop
+* For loop
+* Foreach loop
+
+### While Loop
+
+### Do/While Loop
+
+### For Loop
+
+### Foreach Loop
 
 # Object-Orientation in Java
 
