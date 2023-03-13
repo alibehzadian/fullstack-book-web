@@ -813,12 +813,12 @@ As you remember from your math lessons, some operators have a higher priority th
 | `==`  <br/>`!=`                                                      | Equlity <br/>Not Equality |
 | `&`                                                                  | Bitwise AND |
 | `^`                                                                  | Bitwise XOR |
-| `\|`                                                                 | Bitwise OR |
+| `|`                                                                  | Bitwise OR |
 | `&&`                                                                 | Logical AND |
-| `\|\|`                                                               | Logical OR |
+| `||`                                                                 | Logical OR |
 | `?:`                                                                 | Conditional Operator |
 | `=`  <br/>`+=`  <br/>`-=` <br/>`*=`  <br/>`/=`  <br/>`%=`  <br/>`^=` | Arithmetic Assignments |
-| `&=`  <br/>`\|=`  <br/>`<<=` <br/>`>>=`  <br/>`>>>=`                 | Bitwise Assignments  |
+| `&=`  <br/>`|=`  <br/>`<<=` <br/>`>>=`  <br/>`>>>=`                  | Bitwise Assignments  |
 
 
 
