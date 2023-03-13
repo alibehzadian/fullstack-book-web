@@ -772,7 +772,7 @@ Expressions that result in a boolean value can be combined to form more complex 
 | Operator | Meaning | Example  | description |
 | ---      | ---     | ---      | ---         |
 | `&&`     | AND     | `A && B` | If both expressions are `true`, it is `true`, otherwise it is `false`. |
-| `\|\|`   | OR      | `A && B` | If one of the two expressions is `true`, it is `true`, otherwise it is `false`. |
+| `||`   | OR      | `A && B` | If one of the two expressions is `true`, it is `true`, otherwise it is `false`. |
 | `!`      | NOT     | `!A`     | If A is `true`, this is `false` and if A is `false`, then it is `true` |
 
 
@@ -787,7 +787,7 @@ boolean warning = (grade > 10.0) && (grade < 12.0);
 | Operator | Meaning              | Example | description |
 | ---      | ---                  | ---     | --- |
 | `&`      | Bitwise AND          | -       | - |
-| `\|`     | Bitwise Inclusive OR | -       | - |
+| `|`     | Bitwise Inclusive OR | -       | - |
 | `^`      | Bitwise Exclusive OR | -       | - |
 
 ## Operator Precedence
