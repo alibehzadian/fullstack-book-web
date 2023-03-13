@@ -183,7 +183,6 @@ To process data in the program, we need to be able to identify the data. We need
 As you saw in the previous program, we assign three attributes to each variable: type, name and value. The general pattern of variable definition (also called declaration) in Java language is as follows:
 
 ```java
-	
 Type name;
 ```
 
@@ -226,6 +225,40 @@ After getting acquainted with variables and how to define and value them, we can
 ## Java Wrapper classes for Primitive Types
 
 ## Literal Varialbles
+
+In some Java programs you may want to use values directly. Consider the following statement:
+
+```java
+int a = 5;
+```
+In the above example, the number 5 is a literal variable. The Java compiler has some rules for literals. For example, it recognizes correct literal variables like the above example by default of `int` type. Now, if you want to assign the number 5 to a long variable in an assignment command using the = operator, you must do the following:
+
+```java
+long a = 5L;
+```
+The letter `L` immediately after the number 5 tells the Java compiler that the literal variable 5 is of `long` type. Also, the default for floating point literals in Java is of `double` type. Consider the following line of code:
+
+```java
+float a = 3.14;
+```
+Do you think this line code will compile? Try it! As you may have guessed and probably tested your guess, the Java compiler throws an error when executing the above code:
+
+```
+possible loss of precision
+found:    double
+required: float
+float a = 3.14;
+          ^
+1 error
+```
+Did you get the cause of the error? The literal variable 3.14 is assumed by the Java compiler to be `double` by default. When it wants to put its value in a floating point variable of type `float`, the precision of the `double` must be reduced to `float`, and this is an error from the Java compiler's point of view. 
+
+To solve this problem, you must explicitly tell the Java compiler that 3.14 is a `float` literal. For this, we do the same as the following command:
+
+```java
+float a = 3.14F;
+```
+The letter `F` immediately after 3.14 forces the Java compiler to consider the literal variable 3.14 to be of `float` type.
 
 ## Strings
 
