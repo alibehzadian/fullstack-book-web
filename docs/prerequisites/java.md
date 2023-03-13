@@ -494,6 +494,241 @@ public class VariableScopeTest {
 
 # Java Operators
 
+## Expression
+
+You must have seen many mathematical expressions by now. For example, you know that `2+2` is a mathematical expression. There are also such expressions in programming languages. 
+
+If we want to be more precise, we should say that any statement that has a "value" is an expression. some mathematical expressions:
+
+```java
+int x = 5;
+int y = x;
+int z = x * y;
+```
+
+All the statements above are "expressions" because each of them has a value: in the first line the value of the literal variable 5 is assigned to a variable of type int named x, in the second line the value of the variable x is placed in a variable named y, and In the third line, the value of the product of two variables x and y is placed in the variable z. So 5, x and x * y are each a mathematical expression.
+
+The value of an expression is called the return value. For example, if x is an `int` variable with an initial value of `3` and y is an `int` variable with an initial value of `5`, then the return value of the expression `x * y` is equal to the product of two numbers `3` and `5`, i.e. `15`. See the example:
+
+```java
+int x = 3;
+int y = 5;
+int z = x * y;
+// If you print value of z,
+// you will see that the value is: 15 (= 3 * 5)
+System.out.println( "z value:" + z );
+```
+
+As you know, in most mathematical expressions we use symbols like `*` (multiplication), `+` (addition) and so on. In programming terms, these special symbols are called `operators`. Operators are symbols that are used for mathematical and logical calculations. Below, we will talk more about different types of operators.
+
+## Arithmetic Operators
+
+To perform mathematical calculations in Java, we use five operators: `addition` (`+`), `subtraction` (`-`), `multiplication` (`*`), `division` (`/`) and `modulus` (`%`). In the table below, you will see the list of these operators along with examples of their use:
+
+| Operator | name | Example | Value |
+| ---- | ---- | ---- | ---- |
+| + | addition | 5 + 7 | 12 |
+| - | subtraction | 9 - 3 | 8  |
+| - | Negative | -5 | -5 |
+| * | multiplication | 3 * 2 | 6 |
+| / | division | 15 / 3 | 5 |
+| % | modulus | 8 % 3 | 2 |
+
+Mathematical operators can be classified in different ways. One of the common types of operator classification is the classification of operators based on the number of their operands. 
+
+For example, the four basic mathematical operations each have two operands. In the example of the above table, `5` and `7` are the operands of the expression `5 + 7`. 
+
+Most Java operators are of one or two operand type and there is only one three operand operator in Java, which we see it in the next section.
+
+Note: One of the points that should be considered when using the division operator (/) is the type of variable in which the result of division is supposed to be placed. 
+
+If the division result is stored in an `int` type variable, the division result is rounded to the largest integer smaller than the result. See the example:
+
+```java
+int x = 16;
+int y = 5;
+int z = x / y;
+System.out.println( "z is: " + z ); // z = 3.2 ?
+```
+
+If you do the above division with a calculator, the result of subtraction will show 3.2 whereas if you run the above program, you will see the value of 3 in the output. The reason is clear, the z variable is defined as an int type and cannot store a decimal value. Now we make a change in the above program and rewrite it as follows:
+
+```java
+int x = 16;
+int y = 5;
+float z = x / y;
+System.out.println( "z is: " + z ); // z = 3.2 ?
+```
+
+Now what do you think will be printed on the output? 3.2 or 3? Try! Yes, after running the above program, you will see 3.0! but why? 
+
+This time the `z` variable was defined as a `float` type? In the explanation of this article, it should be said that because both operands of the division operator are of int type, the Java compiler puts the result of division in an `int` variable and then puts it in the `z` variable. 
+
+To solve this problem, two solutions can be used: defining the operands of the division operator of `float` type or forcing the compiler to perform decimal division. Let's see the first solution together:
+
+```java
+float x = 16.0f;
+float y = 5.0f;
+float z = x / y;
+System.out.println( "z is: " + z ); // z = 3.2 !
+```
+
+After running the above program, the result of division will be 3.2. In this method, due to the fact that both operands of the division operator are `float`, the result of division is also a `float`. 
+
+But what should we do if we want to divide two `int`s and see the result as a `float`? For such cases, we use the second method. 
+
+In this method, which is known as "type casting", one of the operands of the division operator is given to the `float` type. See the example:
+
+```java
+int x = 16;
+int y = 5;
+float z = (float)x / y;
+System.out.println( "z is: " + z ); // z = 3.2 !
+```
+
+In the third line of this example, before doing the division, we change the type of variable `x` and convert it to a float variable. After this conversion, the division operator, due to the fact that one of its operands is of `float` type, becomes a `float` division operator and the result of dividing a `float` number.
+
+## Assignment Operator
+
+We are all familiar with the assignment operator. The main task of this operator is to assign the value of the expression on the right (right operand) to the variable (operand) on its left side. 
+
+According to the above definition, the operation of assigning a value to a variable is itself a mathematical expression because it has a value. 
+
+This property allows us to chain several assignment operators and write several expressions in one simpler expression. Example:
+
+```java
+int x = y = z = 10;
+```
+
+According to the property of the assignment operator, the above expression is valid in Java language and its meaning is that all three variables `x`, `y` and `z` have an initial value of `10`. The above expression is equivalent to the following expressions:
+
+```java
+int x;
+int y;
+int z = 10;
+y = z; // y = 10
+x = y; // x = 10
+```
+
+To calculate the value of an assignment expression, the value of the right operand of the assignment expression is always calculated first, and then the result of this expression is placed in the left operand. With the help of this property, you can write attributive expressions in the following form:
+
+```java
+int x = 5;
+x = x + 10; // x = 5 + 10
+```
+
+In the second line of the above example, first the expression x + 10 is determined. Since the initial value of x is equal to 5, the result of the above expression is equal to `5 + 10` or `15`. 
+
+Then this value is placed in the `x` variable. After that, the value of variable `x` is equal to `15`. Changing the value of a variable using the current value of the variable is a very common in programming. 
+
+For this purpose and for the simplicity of operations and more readability of the code, there are several new assignment operators in the Java language, which are shown in the following table with examples:
+
+| Operator | Example  | Equivalent  |
+| ----     | -----    | ----        |
+| `+=`     | `x += y` |	`x = x + y` |
+| `-=`     | `x -= y` | `x = x - y` |
+| `*=`     | `x *= y` | `x = x * y` |
+| `/=`     | `x /= y` | `x = x / y` |
+
+
+Note: Always be careful when using the above shortcut assignment operators. If the right-hand side expression is complex, you may have unwanted errors in your calculation expressions that are usually not easy to find and fix. See the example:
+
+```java
+int x = 20;
+int y = 5;
+// ...
+x = x / y + 5;
+x /= y + 5;
+```
+
+Do you think the above two expressions are equal? In the above expression, the result of `x / y` is first calculated, and then the value of the result of division is added by the number `5`, and the result of this addition, which is `9`, is placed in the `x` variable. 
+
+But in the second expression, first the result of `y` is added by `5`, then `x` is divided by this sum, i.e. `x = x / (y + 5)`
+
+## Increment/Decrement Operators
+
+In programming, it happens many times that we want to decrease or increase the value of a variable by one unit. For this, we can simply use any of the following expressions:
+
+```java
+int x = 20;
+x = x + 1;
+ // or
+x += 1;
+```
+
+But in the Java language, there are two special operators for this purpose: increment operator (`++`) and decrement operator (`–-`). 
+
+These two operators can be placed without spaces before or after the variable so that one is added to the value of the variable or one is subtracted from the value of the variable. See the examples:
+
+```java
+int x = 20;
+ 
+x++; // x = x + 1
+ // or
+++x; // x = x + 1
+...
+x--; // x = x - 1
+ // or
+--x; // x = x - 1
+```
+
+If increment or decrement operators are placed before the variable name, they are called pre-increment or pre-decrement operators. In the same way, the single increment or decrement operators that are placed after the variable name are called post-increment or post-decrement operators.
+
+The difference between pre-increment and post-increment operators is very subtle. In a mathematical expression, if the pre-increment operator is used, first this operator is calculated and adds a value to the desired variable, and then this new value of the variable is used in calculations. 
+
+The function of the pre-decrement operator is similar, in that first the desired variable is reduced by one unit and then this new value of the variable is used in the calculations.
+
+The function of the post-increment operator and the post-uniform decrement operator is that first the mathematical expression is fully calculated and at the end of the calculation, one unit is added to the desired variable or one unit is subtracted from the desired variable. See the example:
+
+```java
+int x = 20;
+int y;
+ 
+y = x++; //(1)
+ // or
+y = ++x; //(2)
+...
+y = x--; //(3)
+ // or
+y = --x; //(4)
+```
+
+In expression (1), first, the value of `y` becomes equal to the current value of variable `x`, i.e. 20, and then one unit is added to variable `x`. This expression is equivalent to writing:
+
+```java
+//(1)
+y = x;
+x = x + 1;
+```
+
+In expression (2), first one unit is added to variable `x` and then the expression `y = x` is evaluated and calculated. This expression is equivalent to writing:
+
+```java
+//(2)
+x = x + 1;
+y = x;
+```
+
+In expression (3), first, the value of `y` becomes equal to the current value of the variable `x`, i.e. 20, and then one unit is subtracted from the variable `x`. This expression is equivalent to writing:
+
+```java
+//(3)
+y = x;
+x = x - 1;
+```
+
+And finally, in expression (4), first one unit is subtracted from the variable x, and then the expression y = x is evaluated and calculated. This expression is equivalent to writing:
+
+```java
+//(4)
+x = x - 1;
+y = x;
+```
+
+## Comparison operators
+
+
+
 # Java Control Structures
 
 ## Selection in Java
