@@ -52,23 +52,6 @@ public class FisrtCupApp {
 }
 ```
 
-~~~java
-public class FisrtCupApp {
-    public static void main(String[] args) {
-        System.out.println("My first cup of Java!");
-    }
-}
-~~~
-
-~~~
-public class FisrtCupApp {
-    public static void main(String[] args) {
-        System.out.println("My first cup of Java!");
-    }
-}
-~~~ 
-{: .language-java}
-
 Save the file with `FisrtCupApp.java`. 
 
 Warning: The file name must be as the same as clss name. It is case-sensitive and, for example `FisrtCupApp.java` is different with `FisrtcupApp.java` and the second one won't compile.
