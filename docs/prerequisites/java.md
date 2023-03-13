@@ -86,9 +86,156 @@ Inside this method there is a statement. Running this line will show `My first c
 
 # Java Data Types
 
+In any program we deal with a number of values. The program may work with numbers, or with characters. For example, suppose we want to take two different numbers from the input in a program, perform mathematical operations on them, and print the result in the output. We call this program `SimpleCalculator`:
+
+```java
+/**
+ * A very simple calculator.
+ */
+public class SimpleCalculator {
+    public static void main(String[] args) {
+    }
+}
+```
+
+Now we need to change the program so that it can store two numbers with different names and values:
+
+```java
+/**
+ * A very simple calculator.
+ */
+public class SimpleCalculator {
+    public static void main(String[] args) {
+        int first;
+        int second;        
+    }
+}
+```
+Now our `main()` method has two variables called `first` and `second`. In programming terms, `first` and `second` are called `variables`. 
+
+As you have seen so far, each variable contains a name and a type. In the `SimpleCalculator` example, we have two variables named `first` and `second`, both of which are `int` type. 
+
+Each variable has a value in addition to name and type. Now we want to modify the `SimpleCalculator` class so that we can initialize our variables:
+
+
+```java
+/**
+ * A very simple calculator.
+ */
+import java.util.Scanner;
+ 
+public class SimpleCalculator {
+ 
+    public static void main(String[] args) {
+        int first;
+        int second;
+ 
+        Scanner input = new Scanner( System.in );
+ 
+        System.out.print("Enter first integer: ");
+        first = input.nextInt();
+ 
+        System.out.print("Enter second integer: ");
+        second = input.nextInt();
+    }
+}
+```
+
+For now, we have nothing to do with the `Scanner` class. Just know that we use the methods of this class to read the inputs of the program. 
+
+After running the above program, the phrase `Enter first integer:` is displayed in the output console and you can enter the desired value in front of it. Then the next line will be displayed with the phrase `Enter second integer:` where you can enter the value you want for the second variable. 
+
+Now we perform some mathematical operations on these two numbers and print the result in the output:
+
+
+```java
+/**
+ * A very simple calculator.
+ */
+import java.util.Scanner;
+ 
+public class SimpleCalculator {
+ 
+    public static void main(String[] args) {
+        int first;
+        int second;
+ 
+        Scanner input = new Scanner( System.in );
+ 
+        System.out.print("Enter first integer: ");
+        first = input.nextInt();
+ 
+        System.out.print("Enter second integer: ");
+        second = input.nextInt();
+ 
+        System.out.println("first + second = " + ( first + second ) );
+        System.out.println("first - second = " + ( first - second ) );
+        System.out.println("first * second = " + ( first * second ) );
+        System.out.println("first / second = " + ( first / second ) );
+    }
+}
+```
+
+The purpose of any computer program is to process data. For this, any program must be able to input data, process it, and display the result appropriately. 
+
+To process data in the program, we need to be able to identify the data. We need to know what kind they are. We also need to know how much each of them has at any given moment. 
+
+As you saw in the previous program, we assign three attributes to each variable: type, name and value. The general pattern of variable definition (also called declaration) in Java language is as follows:
+
+```java
+	
+Type name;
+```
+
+After defining a variable, we must be able to assign a value to it. For this, we use the following pattern:
+
+```java
+name = Value;
+```
+
+If we want, we can do two steps of defining the variable and assigning a value to it in one command:
+
+```java
+Type name = Value;
+```
+
+Now some examples of declaring variables and assigning values to them:
+
+```java
+int a = 5;                   // An integer variable with value 5
+char someChar = 'A';         // A character variable with value 'A'
+double PI = 3.14;            // A floating point number with value 3.14 
+String hello = "Hello Java"; // A String with value "Hello Java"
+```
+
 ## Java Primitives
+After getting acquainted with variables and how to define and value them, we can see the complete list of Java primitive data types:
+
+| Syntax      | Range of allowed values                          | Description  |
+| ----------- | -----------------------                          | ------------ |
+| boolean     | `true` and `false`                               | Suitable for logical variables that always have one of two values, true or false |
+| char        | From Unicode's zero to 2<sup>16</sup>-1 unicode  | Suitable for all types of literal variables. Considering that letter variables in Java Unicode are 16-bit, they can be used for all letters of all languages.|
+| byte        | From -128 to 127                                 | Suitable for integer variables that are within the limit of allowed integer values. |
+| short       | From -2<sup>-15</sup> to 2<sup>15</sup>-1        | Suitable for integer variables that are within the limit of allowed integer values (around -32,000 to +32,000).|
+| int         | From -2<sup>-31</sup> to 2<sup>31</sup>-1        | Suitable for integer variables that are within the limit of allowed integer values (around -2,000,000,000 to +2,000,000,000).|
+| long        | From -2<sup>-63</sup> to 2<sup>63</sup>-1        | Suitable for very, very large integer variables! |
+| float       | IEEE754 (approx 3.4E38- to 3.4E38 with 8 digits of decimal precision)         | Suitable for floating point numbers with good precision for routine calculations |
+| double      | IEEE754 (Approximately from 1.8E308-up to 1.8E308 with 16 digits decimal precision)   | Suitable for very high precision floating point numbers for double precision calculations |
+| void        | No-Value        | For variables that have no type (we'll talk more about the `void` type later) |
 
 ## Java Wrapper classes for Primitive Types
+
+## Literal Varialbles
+
+## Strings
+
+## Constant Variables
+
+## Java Arrays
+
+## Naming rules for Variables
+
+## Variables Scopes
 
 # Java Operators
 
