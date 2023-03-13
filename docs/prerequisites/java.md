@@ -727,6 +727,50 @@ y = x;
 
 ## Comparison operators
 
+Java has operators for comparing variables, literals variables and other types of data. The result of these operators is a `Boolean` variable that always has the value `true` or `false`. The following table contains a complete list of Java comparison operators and examples of each:
+
+| Operator  | Meaning               | Example   | Description                                                                           |
+| -         | -                     | -         | -                                                                                     |
+| ==        | Equality              | `x == 5`  | If x is equal to 5, the result of the statement is `true`, otherwise it is `false`    |
+| !=        | Not Equality          | `x != 5`  | If x is equal to 5, the result of the expression is `false` and otherwise it is `true`|
+| <         | Less Than             | `x < 5`   | If x is less than 5, the result is `true`, otherwise it is `false`                    |
+| >         | Greater Than          | `x > 5`   | If x is greater than 5, the result is `true`, otherwise it is `false`                 |
+| <=        | Less Than or Equal    | `x <= 5`  | If x is less than 5 or equal to 5, the result is `true` and `false` otherwise         |
+| >=        | Greater Than or Equal | `x >= 5`  | If x is greater than 5 or equal to 5, the result is `true` and `false` otherwise      |
+
+An example of the use of comparative operators:
+
+
+```java
+boolean hip;
+int age = 32;
+ 
+// (1)
+hip = (age < 25);
+ 
+// (2)
+hip = ( age == 32 );
+ 
+// (3)
+hip = (age != 32 );
+```
+
+In the above example, we first define a `boolean` variable and then an `int` variable with an initial value of `32`. 
+
+In the first statement, the boolean `hip` variable value is `false`, because the age variable value is not less than 25. Actually, `32 < 25` is not. 
+
+In the second expression, the value of `boolean` variable `hip` is `true` because the value of `age` is equal to 32 and `32 = 32`. 
+
+The value of the third expression is `false` because this expression checks whether the `age` variable is opposite to 32 or not. And because the value of age variable is not opposite to 32, the result of the expression is false.
+
+The main use of comparative operators is in conditional and control expressions, which we will discuss in detail in the next sections.
+
+## Logical Operators
+
+## Bitwise Operators
+
+## Operator Precedence
+
 
 
 # Java Control Structures
