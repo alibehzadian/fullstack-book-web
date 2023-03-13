@@ -262,7 +262,51 @@ The letter `F` immediately after 3.14 forces the Java compiler to consider the l
 
 ## Strings
 
+Our variables are not always numeric types. In many cases, we need to input letters and words into our program, process them and display the result as a word or sentence. 
+
+For example, suppose we have a program that takes the name of a student from the input and displays his/her grade. We need a variable in which we can store the name of the student. 
+
+These types of variables are called `String`s. The Java language has extensive facilities for working with strings, which we will disscuss more in next chapters.
+
+To define a string variable, proceed as follows:
+
+```java
+String name;
+```
+
+Of course, like other types of variables in Java language, it is possible to initialize it at the same time as defining a string variable in Java:
+
+```java
+String name = "Some text";
+```
+`String`s  are always placed between double qoutes.
+
+## Java String handling
+
+## Text Blocks
+
+From Java 15, we have text blocks in Java! You can define a text block by wrapping your text inside `"""` (three double qoutes) as below:
+
+```java
+String html = """
+    <html>
+        <body>
+            <span>example text</span>
+        </body>
+    </html>""";
+```
+
 ## Constant Variables
+
+Constant Variables are variables whose value cannot be changed! This definition is self-contradictory enough. A variable means something that changes, so a variable whose value cannot be changed is meaningless. 
+
+But if we stop playing with words, we can see that many times in programs we may define variables that we don't want their value to change during the execution of the program, intentionally or unintentionally. 
+
+For example, suppose we use the number pi (π) in mathematical calculations. The value of this variable should not change during program execution. For this we define this variable as `final`:
+
+```java
+final double PI = 3.14;
+```
 
 ## Java Arrays
 
