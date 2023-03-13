@@ -525,14 +525,14 @@ As you know, in most mathematical expressions we use symbols like `*` (multiplic
 
 To perform mathematical calculations in Java, we use five operators: `addition` (`+`), `subtraction` (`-`), `multiplication` (`*`), `division` (`/`) and `modulus` (`%`). In the table below, you will see the list of these operators along with examples of their use:
 
-| Operator | name | Example | Value |
-| ---- | ---- | ---- | ---- |
-| + | addition | 5 + 7 | 12 |
-| - | subtraction | 9 - 3 | 8  |
-| - | Negative | -5 | -5 |
-| * | multiplication | 3 * 2 | 6 |
-| / | division | 15 / 3 | 5 |
-| % | modulus | 8 % 3 | 2 |
+| Operator | name           | Example  | Value |
+| ----     | ----           | ----     | ----  |
+| +        | addition       | 5 + 7    | 12    |
+| -        | subtraction    | 9 - 3    | 8     |
+| -        | Negative       | -5       | -5    |
+| *        | multiplication | 3 * 2    | 6     |
+| /        | division       | 15 / 3   | 5     |
+| %        | modulus        | 8 % 3    | 2     |
 
 Mathematical operators can be classified in different ways. One of the common types of operator classification is the classification of operators based on the number of their operands. 
 
@@ -767,11 +767,30 @@ The main use of comparative operators is in conditional and control expressions,
 
 ## Logical Operators
 
+Expressions that result in a boolean value can be combined to form more complex expressions. Logical operators can be used to combine these expressions. These operators are AND, OR, NOT, and XOR. The following table contains Java logical operators and descriptions and examples for each of them:
+
+| Operator | Meaning | Example  | description |
+| ---      | ---     | ---      | ---         |
+| `&&`     | AND     | `A && B` | If both expressions are `true`, it is `true`, otherwise it is `false`. |
+| `\|\|`   | OR      | `A && B` | If one of the two expressions is `true`, it is `true`, otherwise it is `false`. |
+| `!`      | NOT     | `!A`     | If A is `true`, this is `false` and if A is `false`, then it is `true` |
+
+
+In the following example, we want to give a written warning to students whose grades are between 10 and 12. For this we need to combine two conditional expressions:
+
+```java
+double grade = // ...
+boolean warning = (grade > 10.0) && (grade < 12.0);
+```
 ## Bitwise Operators
 
+| Operator | Meaning              | Example | description |
+| ---      | ---                  | ---     | --- |
+| `&`      | Bitwise AND          | -       | - |
+| `\|`     | Bitwise Inclusive OR | -       | - |
+| `^`      | Bitwise Exclusive OR | -       | - |
+
 ## Operator Precedence
-
-
 
 # Java Control Structures
 
