@@ -44,15 +44,6 @@ Since that year Oracle has presented a new version of Java language every year. 
 # First Java Application
 It is time for a cup of "Java"! We already have installed Java. We don't want to use any IDE for our first Java program! So, Open your preferred text editor (For example Notepad in windows) and write this code (please, do not copy for this time!):  
 
-
-```
-public class FisrtCupApp {
-    public static void main(String[] args) {
-        System.out.println("My first cup of Java!");
-    }
-}
-```
-
 Save the file with `FisrtCupApp.java`. 
 
 {: .warning }
