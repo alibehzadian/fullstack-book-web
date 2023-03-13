@@ -56,6 +56,32 @@ Save the file with `FisrtCupApp.java`.
 
 Warning: The file name must be as the same as clss name. It is case-sensitive and, for example `FisrtCupApp.java` is different with `FisrtcupApp.java` and the second one won't compile.
 
+Now, it is time to compile our Java program. Open your terminal (in windows, open `Command Prompt`), change directory to the `FisrtCupApp.java` directory and then run this command:
+
+```
+javac FisrtCupApp.java
+```
+
+After successfull compile, you will see a new generated file: `FisrtCupApp.class`. This is compiled version of our app that we can run it on every machine with Java Runtime Environment (JRE) installed.
+
+To run the program, run this command in the terminal:
+
+```
+java FisrtCupApp
+```
+
+If everything goes well, you can see a message in your terminal:
+
+```
+My first cup of Java!
+```
+
+This program includes one `class`. Classes are the main building block of Object Oriented Programming (OOP). 
+
+In this class, there is a method called main(). This method is the starting point of all Java programs. The Java Virtual Machine (JVM) executes this method to start a Java program, and as soon as this method is finished, the execution of the program ends. 
+
+Inside this method there is a statement. Running this line will show `My first cup of Java!` in the output window.
+
 # Java Class Structure
 
 # Java Data Types
