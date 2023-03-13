@@ -792,6 +792,37 @@ boolean warning = (grade > 10.0) && (grade < 12.0);
 
 ## Operator Precedence
 
+What is the result of the following expression?
+
+```java
+int x = 6 + 4 / 2;
+```
+Is the value of variable `x` equal to 5 or 8? To answer this question, we need to know which operators are evaluated first and which ones are evaluated later. If `+` is evaluated earlier than `/`, the result of the expression will be 5, and if `/` is evaluated earlier, the result of the expression will be 8. 
+
+As you remember from your math lessons, some operators have a higher priority than other operators and whenever they are included in an expression, their result is calculated first and then other operators are evaluated. Java also uses the operator priority table to perform its calculations, where each operator has a priority. See the operator precedence table in Java:
+
+| Operator | Description |
+| --- | --- |
+| `.` <br/>`[]` <br/>`()`                                              | Access Method Operator <br/> Array Index Operator <br/> Paranthesis in expressions to group some expressions together|
+| `++` <br/>`--` <br/>`!` <br/>`~` <br/>`instanceof`                   | Increment Operator <br/> Decrement Operator <br/> Logical Not <br/>Bitwise Complement <br/>Binary Operator for Type Checkeing |
+| `new` <br/>`()`                                                      | Creates new instance of an object <br/>Type Casting Paranthesis |
+| `*`  <br/>`/`  <br/>`%`                                              | Multiplication <br/>Division <br/>Modulus |
+| `+` <br/>`-`                                                         | Addition <br/>subtraction |
+| `<<`  <br/>`>>`  <br/>`>>>`                                          | Signed Left Shift <br/> Signed Right Shift <br/>Unsigned Right Shift  |
+| `<`  <br/>`>`  <br/>`<=` <br/>`>=`                                   | Less Than <br/> Greater Than <br/>Less Than or Equal <br/>Greater Than or Equal |
+| `==`  <br/>`!=`                                                      | Equlity <br/>Not Equality |
+| `&`                                                                  | Bitwise AND |
+| `^`                                                                  | Bitwise XOR |
+| `\|`                                                                 | Bitwise OR |
+| `&&`                                                                 | Logical AND |
+| `\|\|`                                                               | Logical OR |
+| `?:`                                                                 | Conditional Operator |
+| `=`  <br/>`+=`  <br/>`-=` <br/>`*=`  <br/>`/=`  <br/>`%=`  <br/>`^=` | Arithmetic Assignments |
+| `&=`  <br/>`\|=`  <br/>`<<=` <br/>`>>=`  <br/>`>>>=`                 | Bitwise Assignments  |
+
+
+
+
 # Java Control Structures
 
 ## Selection in Java
