@@ -1009,6 +1009,96 @@ In the above example, if `condition1` is `true`, `statement1` will be executed. 
 
 ### Switch Statement
 
+A multiple choice statement in Java is the `if-else-if` statement. As you have seen, if the number of conditions of this statement is high, its complexity may reduce the readability of the code. To solve this problem, multiple choice statement `switch` is introduced in Java. The general structure of the `switch` is as follows:
+
+```java
+switch(statement) {
+    case value1:
+        statement1;
+        break;
+    case value2:
+        statement2;
+        break;
+    case value3:
+        statement3;
+        break;
+    ...
+    default: // Optional 
+        statementN;
+        break; //the break of default section is optional
+}
+```
+
+Whenever program execution control reaches the `switch` statement, it evaluates the expression inside the parentheses in front of the `switch`. The result of this expression must be one of the basic data types of `byte`, `char`, `short` or `int`. 
+
+Then it compares the result of this expression with the opposite values of the `case`s. If these two values are equal, the control of program execution is transferred to internal `case` statement. 
+
+If the result of the switch statement is not equal to any of the case values, the internal `default` statement are executed. Of course, `default` is optional and we can not write it. See this example:
+
+```java
+int a = 5;
+int b = 10;
+switch(a + b) {
+    case 5:
+        System.out.println("a + b = 5 ?");
+        break;
+    case 10:
+        System.out.println("a + b = 10 ?");
+        break;
+    case 15:
+        System.out.println("a + b = 15 ?");
+        break;
+    default:
+        System.out.println("a + b = " + ( a + b ) );
+        break; //Optional
+}
+```
+
+In this example, we have defined two integer variables of type `int`. When the program execution reaches the `switch` statement, the result of the expression `a + b` is evaluated and then this value is compared with the `case` statements. 
+
+First, the sum of `a + b` is compared with 5 (first `case`), since these two expressions are not equal, this expression is compared with 10 (next `case`), but again these two expressions are not equal, so the above sum is equal to 15 which is the value of the next `case` is compared, because these two expressions are equal, the program execution control is transferred to the inside of this `case`. Then the internal statements of this `case` continue **until reaching the first break statement**.
+
+Note: What happens if we don't write the `break` statement at the end of each `case`? Look at this example:
+
+```java
+char ch = 'a';
+switch(ch ) {
+    case 'a':
+        System.out.println("ch is a");
+    case 'A':
+        System.out.println("ch is A");
+        break;
+    default:
+        System.out.println("ch is not a or A");
+        break; //Optional
+}
+```
+In the above `switch` statement, first the character `ch` is compared with the first `case`, and since these two characters are equal, the command inside the `case` is executed and the phrase `ch is a` is printed in the output, but immediately the command inside the next `case` is also is executed and the statement `ch is A` is printed in the output. 
+
+In many cases, such as this example, omitting the `break` command may lead to logical errors (errors that are not compiler errors, but disrupt the execution of the program) in the program. Of course, it is possible to use this point intelligently. Look at this example:
+
+```java
+char selection = 'a';
+switch(ch) {
+    case 'a':
+    case 'A':
+        someMethodA();
+        break;
+    case 'b':
+    case 'B':
+        someMethodB();
+        break;
+    default:
+        System.out.println("Unknown command.");
+        break; //Optional
+}
+```
+
+In this example, it is assumed that the user can choose between two options `a` and `b`. For this, the user must enter one of the two letters `a` or `b`. But the user may enter the capital form of these letters, `A` or `B`. 
+
+With the trick we used, there is no difference between `a` and `A` (nor `b` and `B`) and if the user enters `a` or `A`, the method `someMethodA()` will be executed. 
+
+
 ## Iteration in Java
 
 The sequence and selection are sufficient to implement many algorithms, however there are many cases where we want to repeat an activity a large number of times. 
