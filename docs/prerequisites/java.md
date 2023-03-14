@@ -1121,9 +1121,151 @@ Java uses several different methods for the repetition structure, which we will 
 
 ### While Loop
 
+So far you have seen many algorithms. In most of these algorithms, there is no need to repeat some statements. But in most of the problems that we want to write programs for, we come across cases where we need to repeat a number of statements several times. For this, we use repetition or loop.
+
+Suppose you want to calculate the sum and average of 100 numbers and print them in the output. What are you doing? Do you define 100 variables and read the value of one of them from the input each time? Or that you write the command to read from the input once and ask the program to repeat it for you 100 times? Of course, you will use the second method. 
+
+The most basic repetition in Java is the `while` loop. The syntax of the `while` is as follows:
+
+```java
+while(condition)
+    statement;
+```
+
+And as you have seen for other control structures, if the number of internal statements is more than one, we must use { and }:
+
+```java
+while(condition) {
+    statement1;
+    statement2;
+    statement3;
+    // ...
+}
+```
+
+In the while loop structure, until the condition condition is true, the inner while statement or statements will be repeated. See the following example:
+
+```java
+System.out.println("Start of while Loop!");
+int counter = 0;
+while(counter < 10) {
+    System.out.println("now counter is: " + counter);
+    counter++;
+}
+System.out.println( "End of while Loop!" );
+```
+
+When the program execution reaches the `while` statement, the initial value of the `counter` variable is equal to 0. while checks to see if the condition `counter < 10` is true. Because this condition is true, the inner while statement is executed. 
+
+Inside the `while` statement, one is added to the `counter` variable each time. When the value of `counter` equals 10, the condition of the loop becomes `false` and the control of program execution is transferred to the first statement after `while`. The output of the above code is as follows:
+
+```
+Start of while Loop!
+now counter is: 0
+now counter is: 1
+now counter is: 2
+now counter is: 3
+now counter is: 4
+now counter is: 5
+now counter is: 6
+now counter is: 7
+now counter is: 8
+now counter is: 9
+End of while Loop!
+```
+
+Note: Loops that use a variable as a counter are called loops with a counter. In this type of loops, we need a counter variable with the following three properties:
+
+- The counter variable has a valid initial value. 
+
+  Suppose in the example above, the initial value of the counter variable, which is used as a loop counter, was equal to 10 instead of 0. In this case, the program was not repeated in this loop at all!
+
+- The amount of increment or decrement of the counter should be clear. 
+
+  Each time the loop is executed, the value of the loop counter must be changed. If this does not happen, the loop condition is always true and the program may end up in an infinite loop, a loop that will never exit! 
+  
+  In the example above, the counter is incremented by one each time the loop is executed.
+
+- The condition for the termination of the loop is achievable. 
+
+  If the control condition of the loop never becomes false, we may still be trapped in the infinite repetition loop, as in the case above. 
+  
+  For example, suppose in the code above, instead of adding one to the counter each time the loop is executed, we subtract one from it. Then the condition of the loop would never be `false` and this loop would always be repeated and the instructions after the loop would not be executed at all! 
+  
+  The while loop does not directly control any of the three features mentioned above. Therefore, you must define your control variable outside the loop and increment or decrement it appropriately inside the loop. To overcome these problems, we use the for loop, which we will explain in the next sections.
+
 ### Do/While Loop
 
+The do-while statement is conceptually very similar to the while loop. Pay attention to the syntax of this command:
+
+```java
+do
+    statement;
+while(condition);
+```
+
+If there are more than one inner statements, we use { and }:
+
+```java
+do {
+    statement1;
+    statement1;
+    statement1;
+    ...
+} while(condition);
+```
+
+The biggest difference between `while` and `do-while` loops is that in while loops, the condition of the loop is checked at the beginning of each iteration, but in the `do-while` loop, a repetition is done first and then the condition of the loop is checked. To better understand the difference between these two loops, see the following examples:
+
+```java
+char userSelect;
+do {
+    userSelect = displayMenu();
+    switch(userSelect) {
+        case 'a':
+        case 'A':
+            doMethodA();
+            break;
+        case 'b':
+        case 'B':
+            doMethodB();
+            break;
+        case 'q':
+        case 'Q':
+            sayGoodBye();
+            break;
+    }
+} while(userSelect != 'q' && userSelect != 'Q');
+```
+
+In the code snippet above, it is assumed that the `displayMenu()` method displays a menu to the user and asks her to enter the letter `a` or `A` to do one task and the letter `b` or `B` to do the second task, and if Want to exit the program, enter the letter `q` or `Q`. 
+
+At the beginning of program execution, when program execution control reaches the `do-while` statement, the control variable of the iteration loop, which is `userSelect`, has no value. But after the first iteration in the loop, this variable has a value, then this value is checked in the `switch`, and if it is equal to `a` or `A`, the `doMethodA()` method is called, and if it is equal to `b` or `B`, the `doMethodB()` is called. If the user enters `q` or `Q` (which means exiting the program), the `sayGoodBye()` method will display the exit message for her. 
+
+Now the first iteration of the do-while loop is completed and now the condition of the loop is checked. This condition is that the variable userSelect does not have the value `q` and `Q`.
+
+As you can see, the statements inside the `do-while` loop are executed at least once, while in the `while` loop this may not happen.
+
+Note: At the end of the `do-while`, there must be a semicolon `;`.
+
 ### For Loop
+
+The `for` iteration structure is the most widely used iteration structure in the Java language. 
+
+In this repetition structure, unlike the `while` structure, the counter variable along with its initial value, the increment or decrement of the counter, as well as the termination condition of the repetition are defined inside the `for`, and this makes the repetition with `for` much more readable than the `while` and `do-while`. 
+
+See the syntax of the for loop:
+
+```java
+for(<Expression1>; <Expression2>; <Expression3>)
+    statement;
+```
+
+As you can see, in the definition of the `for`, there are three statements in parentheses. 
+
+The first statement is the definition of the counter variable and its initialization. 
+
+The second statement is the loop termination condition and the third term is the jump step of the loop counter. The reason why we put each of these expressions in <> is to show that each of these expressions is optional. Pay attention to the following example:
 
 ### Foreach Loop
 
