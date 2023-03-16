@@ -1265,7 +1265,149 @@ As you can see, in the definition of the `for`, there are three statements in pa
 
 The first statement is the definition of the counter variable and its initialization. 
 
-The second statement is the loop termination condition and the third term is the jump step of the loop counter. The reason why we put each of these expressions in <> is to show that each of these expressions is optional. Pay attention to the following example:
+The second statement is the loop termination condition and the third term is the jump step of the loop counter. The reason why we put each of these expressions in <> is to show that each of these expressions is optional. See the following example:
+
+```java
+for(int i = 0; i < 10; i++)
+    System.out.println(i);
+```
+
+This loop is simply: "set variable i equal to 0 and until i < 10, execute the following statement each time and then add one to i".
+
+Note: The jump step of the for loop is applied after the execution of the internal statements of the for loop.
+
+Note: If the number of internal statements of the `for` is more than one, we use `{` and `}`:
+
+```java
+int sum = 0;
+for(int i = 0; i < 10; i++) {
+    System.out.println("i is: " + i);
+    sum += i;
+    System.out.println( "sum is: " + sum );
+}
+```
+
+One of the interesting features of the `for` loop in Java is that it is possible to use several initial values and several different jump steps in a `for` loop. See the following example:
+
+```java
+for(int i = 0, j = 10; i < 10; i++, j--) {
+    System.out.println( "(" + i ", " + j + ")" );
+}
+```
+
+After running the above code, you will see the following output:
+
+```
+(0, 10)
+(1, 9)
+(2, 8)
+(3, 7)
+(4, 6)
+(5, 5)
+(6, 4)
+(7, 3)
+(8, 2)
+(9, 1)
+```
+
+As we said, each of the three statements that come in the `for` loop are optional. That is, the `for` loop can be without defining the counter variable and setting it. Or that the for loop can be without stepping the counter variable. Of course, semicolons `;` are not removed. Look at the following examples:
+
+```java
+int i = 0;
+for(; i < 10; i++) {
+    ...
+}
+ 
+// OR 
+ 
+int i = 0;
+for(; i < 10;) {
+    ...
+    i++;
+}
+```
+
+### Nested For Loops
+
+In each loop, we can execute a number of Java statements, but is it possible to have another loop in a loop? Definitely yes, of course with care and caution! Take a look at the following code snippet and guess what it does:
+
+```java
+for(int i = 0; i < 10; i++) {
+    for(int j = 0; j < 10; j++) {
+        System.out.print((i * j) + "  ");
+    }
+    System.out.println();
+}
+```
+
+If you guessed that this program generates the multiplication table, you guessed right! See sample program output:
+
+```
+0  0  0  0  0  0  0  0  0  0  
+0  1  2  3  4  5  6  7  8  9  
+0  2  4  6  8  10  12  14  16  18  
+0  3  6  9  12  15  18  21  24  27  
+0  4  8  12  16  20  24  28  32  36  
+0  5  10  15  20  25  30  35  40  45  
+0  6  12  18  24  30  36  42  48  54  
+0  7  14  21  28  35  42  49  56  63  
+0  8  16  24  32  40  48  56  64  72  
+0  9  18  27  36  45  54  63  72  81  
+```
+
+In the above program, you can see two nested loops. In the first loop, you see a counter variable named `i` and in the second loop, a counter variable named `j`. 
+
+First, variable `i` is defined with an initial value of `1`. Then the program enters the inner loop and variable `j` is defined with an initial value of `1`. After that, the inner loop is repeated 10 times and in each repetition, one number goes to the output. 
+
+Every time the repetition of the inner loop is finished, in the outer loop, the output is transferred to the next line and the inner loop is repeated again, and... 
+
+How many times is the inner statement of the inner loop repeated? The outer loop is executed 10 times, and every time this loop is executed, the inner loop is repeated 10 times, that is, the inner instruction of the inner repetition loop is executed 100 times.
+
+### Continue and Break in the loops
+
+You have become familiar with the `break` in the `switch` expression. The `break` and `continue` are used to further control the flow of program execution in select and repeat structures. 
+
+Many times we may stop in the middle of executing a loop. For example, suppose we are looking for a specific number in an array, as soon as the desired number is found, there is no need to repeat the loop in vain. 
+
+What should be done in this situation? You have to get out of the loop. You can use the `break` command to exit the loop. See:
+
+```java
+int[] list = new int[] {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+for( int i = 0; i < list.length; i++) {
+    if( list[i] == 20 ) {
+        System.out.println("Hooray! we found 20!");
+        break;
+    }
+}
+```
+
+In the above program, at the beginning of each execution of the loop, we check whether the array item is equal to 20 or not. If it is equal to 20, by printing an expression, we exit the loop.
+
+The function of the `continue` expression is similar. This time, we don't want to go to the end of the loop commands and execute the commands again from the beginning of the loop, of course with the new counter values! See the following example:
+
+```java
+double[] grades = new double[] {18.0, 9.0, 11.5, 16.8, 6.5, 14.5, 19.0, 9.9};
+for(int i = 0; i < grades.length; i++) {
+    if(grades[i] < 10.0) {
+        continue;
+    }
+    System.out.println("Passed, grade is: " + grades[i] );
+}
+```
+In the above loop, if the value of `grades[i]` is less than `10.0`, the rest of the internal statements of the loop will not run and we will return to the loop and repeat from the beginning of the loop again, with the difference that the value of the counter is increased by one. 
+
+The result of this loop is the printing of scores greater than 10. See the output of the code:
+
+
+```
+Passed, grade is: 18.0
+Passed, grade is: 11.5
+Passed, grade is: 16.8
+Passed, grade is: 14.5
+Passed, grade is: 19.0
+```
+
+Note: `break` and `continue` statements are used in loops. The only use of `break` outside of repetition structures is in the `switch` statement.
 
 ### Foreach Loop
 
