@@ -1413,9 +1413,65 @@ Note: `break` and `continue` statements are used in loops. The only use of `brea
 
 # Object-Orientation in Java
 
+You must have heard that Java is an object-oriented language. In this section, I want to expand this expression and explain the meaning of object-orientation.
+
+Until now, we used the traditional method of divide and conquer to solve problems. In this way, we first identify the main problem and then divide it into several smaller problems. We repeat this work for each of the smaller problems and continue this until each problem becomes an atomic problem: a problem that cannot be divided into several smaller problems. Then we merge these small solved problems together to solve the main problem.
+
+The biggest problem with this problem solving method is that none of these smaller problems are independent and each of them depends on one or more other sub-problems. If you want to make a change in one of them, you simply cannot find the effect of this change in other subprograms. 
+
+Another problem with this method is that if an error occurs in the program, it is very difficult and in some cases almost impossible to discover the cause of the error. These two problems are so important that we doubt the correctness of the divide and conquer method in solving problems and look for another way to solve problems.
+
+One of the problem solving methods that has been introduced as an alternative to the traditional "divide and conquer" method is the "object-orientation" method. In the method of object-orientation, the view of the problem is completely changed. 
+
+Instead of finding a problem and dividing it into smaller sub-problems, we identify the "things" that exist in the problem domain and the relationships between these "things". The "thing" can be anything: a human, a computer program, a boat or... this "thing" is the "object".
+
+For example, if we want to write the control system of a shipping port, what are the objects of our problem? Ships, docks, control officers, tugs, etc. The relationship between these objects is also important. The ship must dock at the wharf, unload its cargo, leave the wharf. The tugboats pull the ships to the dock and... 
+
+As you can see, if we identify the objects correctly and examine the relationships between them carefully, we will have a solution to the problem.
+
+The most important elements in solving problems using the "object-orientation" method are:
+
+* object  
+* Class  
+* Relationships between classes  
+
+**Object:** "Everything is an object". Perhaps an object cannot be defined simpler. If you look around you, you will see objects: people, animals, plants, buildings, computers, telephones, televisions, mobiles, gas stoves and the like.
+
+If you look closely at the problem you are trying to solve, you will see objects: people, computer systems, timers that control program execution, electronic devices, hardware equipment, machines, buildings, etc., each of these is an object.
+
+Each object has several characteristics: each person has weight, height, etc. Computers have a specific speed and amount of memory, TVs have a specific screen size, and... the values of these characteristics distinguish two objects. These are called "attributes".
+
+Just as objects have their own attributes, they also have their own behaviors. For example, a soccer ball rolls, the car accelerates, brakes, beeps, the lamp turns off, turns on, the TV volume increases or decreases, ...
+
+According to Grady Booch (one of the original designers of Object Orientation), every object has state, behavior, and identifier. 
+
+State means the properties and their values. The identifier is used to distinguish objects of the same type. For example, if two cars are completely similar, it should be possible to distinguish the two objects in some way. About the car, the license plate number can be used as an identifier because no two cars in the world have the same license plate number.
+
 ## Java Classes
 
-## Inheritance
+Have you ever seen a map of a building or a car? A civil engineer can visualize the building by looking at the plan and then build a building based on the details of the plan. In the same way, a mechanical engineer can make a prototype of a car by using the drawings of a car. "Class" is like a map in object oriented programming.
+
+If we look carefully at the objects, we will notice similarities in them. For example, if we pay attention to cars, they all have four wheels, a steering wheel, a brake, a gas pedal, etc. So we can put the cars in a "category" or "class".
+
+A "class" is a template for creating an object. A class specifies the properties and behavior of objects that are created from it.
+
+Relationships between classes: Classes can have relationships with each other. Some of these relationships are simple and some are complex. Here we will mention some of these relationships to better understand the concepts of object-orientation.
+
+### Inheritance
+
+Classes can inherit properties and behavior from each other. For example, if we consider the class `Vehicle`, we can define the class `Car`. This class inherits all the features and behavior of the `Vehicle` class and can add new behavior and properties to it. This relationship is called inheritance. If we want to express this relationship with the help of UML diagrams, it is as follows:
+
+![UML diagram display car class inheriting vehicle class](../../assets/images/uml-class-diagram-inheritance.png)  
+
+Inheritance can have more levels. For example, you can define a class `SUV` that inherits from the class `Car`. This relationship is also called `"... is a..."`. According to this nomenclature, the above relation is read as `"a SUV is a Car"`. 
+
+### Composition
+
+Another relationship that exists between classes is the `composition` relationship. In this relationship, a class contains another class. For example, let's say we have a class for `Engine`. In this way, the `Car` class contains an `Engine`. This relationship is as follows with the help of UML diagrams:
+
+![UML diagram display composition relationship between car class and engine class](../../assets/images/uml-class-diagram-composition.png) 
+
+This relationship is also called `"...has a..."` According to this nomenclature, the above relation is read as `"Car has a Engine"`.
 
 ## Abstract Classes
 
