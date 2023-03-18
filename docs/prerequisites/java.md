@@ -1455,7 +1455,76 @@ If we look carefully at the objects, we will notice similarities in them. For ex
 
 A "class" is a template for creating an object. A class specifies the properties and behavior of objects that are created from it.
 
-Relationships between classes: Classes can have relationships with each other. Some of these relationships are simple and some are complex. Here we will mention some of these relationships to better understand the concepts of object-orientation.
+This is a Java class:
+
+```java
+package model;
+ 
+/**
+ * Documentations of the class
+ */
+public class Person {
+ 
+}
+```
+
+In the image below, we have specified parts of a Java class:
+
+![parts of a Java class](../../assets/images/main-parts-of-java-class.png) 
+
+**Class Name:** Perhaps the most important part of defining a `class` is its name. The name of the `class` should describe the use of the objects that are going to be created from it. In the example above, the class name is `Person`. It can be simply assumed that every object created from this class is representing a person.
+
+There are several things to keep in mind about class names:
+
+1- The name of the class starts with a capital letter. Therefore, a class named `person` is correct from the point of view of the Java compiler, but it is not recommended.
+
+2- The name of the file where the source code of the class is located, must be the same as the name of the class. Therefore, the source code of the `Person` class is located in a file called `Person.java`. Note that case is important and you cannot save the Person class in a file called `person.java` or `PERSON.java`.
+
+3- If the name of the class is more than one word, each word starts with a capital letter and sticks to the previous word. Therefore, if we want a class to manage persons in the system, we can call it `PersonManager`.
+
+**Class Keyword:** The Java compiler recognizes that we want to define a class with the help of the `class` keyword. The class name comes with a space after `class` keyword. Note that nothing but white space should come between them.
+
+**Class Access Modifier:** Classes are written to be used! We have only two ways to use a class; Either create an object from it or create other classes that inherit from it. We will explain inheritance later. 
+
+The solution that can determine the level of access to the class is called access modifier. In Java, we have four types of access modifiers, of which `public` is one of them.
+
+**`public` access class:**
+
+**`private` access class:**
+
+**`protected` access class:**
+
+**Default access class:**
+
+**Class Body:** As we said before, each class contains components. We write these components in the body of the class. The class body immediately after the class name starts with a `{` sign and ends with a `}` sign. Between these two symbols is where we define the properties and methods of the class. These symbols are necessary to start and end the class body, and even if the class has no properties or methods, we must use `{` and `}` to encapsulate class body.
+
+**Package Declaration:** To group classes and put related classes together in one place, Java uses a concept called `package`. For example, in software engineering, all the objects that are supposed to be stored in the database are called model objects. If we want to put these classes both conceptually and physically in one place, we use `package`.
+
+Putting related classes together in a `package` makes our work much easier. Suppose we put all the classes from which the objects are made in a package named `model`, then whenever we want, we can import all of them in the program at the same time. Also, this helps the program to be self-documented; We know that all our model classes are in a package called `model`. 
+
+Each Java package is equivalent to a folder in the file system. For example, the `model` package is the `model` folder in the file system. The source codes of the classes that are in the same package are all in this folder. For example, the source code of the `Person` class, which is located in the `model` package, is located in a folder called `model`.
+
+Packages can be nested. In this case, in the package definition of a class, we start from the outermost package and connect each package to the next package with a dot (`.`). For example, if the `test` package is in the `model` package, the package definition for the classes of the `test` package is `package model.test;`.
+
+The definition of the package that our Java class resides in is the first line of code in our Java file. Note that the package is not a component of the class and therefore its definition is not included in the class. If we write any code before defining the package, our program will not compile.
+
+**Package Naming Rules in Java:** As there are rules for naming classes, there are also rules for packages:
+
+1- It is better to use the reverse of the company's domain name to name the packages. For example, if you work for `The Best Software Company` and your company domain name is `www.company.com`, start your packages with `com.company`. 
+
+Because domain names are globally unique, the naming of your packages and therefore your classes will also be unique. If you don't have a domain name, try starting your packages with a name that you know is unlikely to have a package with the same name in other libraries you use. 
+
+If two classes with the same name are in packages with the same name and in separate libraries, the program may not compile.
+
+2- Packages are written entirely in lowercase letters. Even if there are two or more words, all words are still written in lowercase letters. Underscore (`_`) is not used between them. If you feel that a name like `someclassesthatweneed` is unreadable, then rest assured that your naming is not correct and you should have chosen a better package name!
+
+**Documentation:**
+
+TODO: More on Java comments and JavaDoc
+
+## Relationships between classes
+
+Classes can have relationships with each other. Some of these relationships are simple and some are complex. Here we will mention some of these relationships to better understand the concepts of object-orientation.
 
 ### Inheritance
 
@@ -1464,6 +1533,10 @@ Classes can inherit properties and behavior from each other. For example, if we 
 ![UML diagram display car class inheriting vehicle class](../../assets/images/uml-class-diagram-inheritance.png)  
 
 Inheritance can have more levels. For example, you can define a class `SUV` that inherits from the class `Car`. This relationship is also called `"... is a..."`. According to this nomenclature, the above relation is read as `"a SUV is a Car"`. 
+
+TODO: explain Java `extend` keyword with examples
+
+TODO: Talk about sealed classes
 
 ### Composition
 
